@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="../shared.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../theme.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Sudoku</h1>
+      <div class="header-actions">
+        <a class="back-link" href="../index.html">← Games</a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="theme-icon sun" aria-hidden="true">☀️</span>
+          <span class="theme-icon moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="game-panel">
+      <div class="settings">
+        <div class="setting-group">
+          <label class="setting-label" for="difficulty">Difficulty</label>
+          <select class="select" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="setting-group lives-group">
+          <span class="setting-label">Mistakes</span>
+          <div class="lives" id="lives" aria-live="polite">♥ ♥ ♥</div>
+        </div>
+      </div>
+
+      <p class="status" id="status">Select a cell, then enter 1–9</p>
+
+      <div class="sudoku-board" id="board" role="grid" aria-label="Sudoku board"></div>
+
+      <div class="number-pad" id="numberPad" role="group" aria-label="Number pad">
+        <button type="button" class="num-btn" data-num="1">1</button>
+        <button type="button" class="num-btn" data-num="2">2</button>
+        <button type="button" class="num-btn" data-num="3">3</button>
+        <button type="button" class="num-btn" data-num="4">4</button>
+        <button type="button" class="num-btn" data-num="5">5</button>
+        <button type="button" class="num-btn" data-num="6">6</button>
+        <button type="button" class="num-btn" data-num="7">7</button>
+        <button type="button" class="num-btn" data-num="8">8</button>
+        <button type="button" class="num-btn" data-num="9">9</button>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="newGame">New Puzzle</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

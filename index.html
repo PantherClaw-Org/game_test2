@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puzzle Games</title>
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="home.css" />
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="home">
+    <header class="header">
+      <h1>Puzzle Games</h1>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon sun" aria-hidden="true">☀️</span>
+        <span class="theme-icon moon" aria-hidden="true">🌙</span>
+      </button>
+    </header>
+
+    <p class="home-lead">Pick a game to play.</p>
+
+    <div class="game-cards">
+      <a class="game-card" href="tictactoe/index.html">
+        <span class="game-card-preview ttt-preview" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </span>
+        <h2>Tic Tac Toe</h2>
+        <p>Classic 3×3 — play a friend or challenge the computer.</p>
+      </a>
+
+      <a class="game-card" href="sudoku/index.html">
+        <span class="game-card-preview sudoku-preview" aria-hidden="true"></span>
+        <h2>Sudoku</h2>
+        <p>Standard 9×9 — Easy, Medium, or Hard. Three strikes and you’re out.</p>
+      </a>
+
+      <a class="game-card" href="connect-four/index.html">
+        <span class="game-card-preview c4-preview" aria-hidden="true"></span>
+        <h2>Connect Four</h2>
+        <p>Drop red vs yellow — beat the AI on Easy, Medium, or Hard.</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

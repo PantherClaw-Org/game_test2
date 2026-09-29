@@ -1,0 +1,136 @@
+.app {
+  width: 100%;
+  max-width: 480px;
+}
+
+.lives-group {
+  justify-content: flex-end;
+}
+
+.lives {
+  font-size: 1.15rem;
+  letter-spacing: 0.15em;
+  color: var(--danger);
+  min-height: 2.15rem;
+  display: flex;
+  align-items: center;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+  margin: 1rem 0 1.25rem;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sudoku-cell {
+  aspect-ratio: 1;
+  border: none;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: clamp(1rem, 4vw, 1.35rem);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sudoku-cell:nth-child(3n) {
+  border-right: 2px solid var(--text);
+}
+
+.sudoku-cell:nth-child(9n) {
+  border-right: none;
+}
+
+.sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+.sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid var(--text);
+}
+
+.sudoku-cell:nth-child(n + 73) {
+  border-bottom: none;
+}
+
+.sudoku-cell.given {
+  font-weight: 700;
+  color: var(--text);
+  background: var(--cell-hover);
+}
+
+.sudoku-cell.user {
+  color: var(--accent);
+}
+
+.sudoku-cell.selected {
+  background: rgba(99, 102, 241, 0.18);
+}
+
+.sudoku-cell.related {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.sudoku-cell.same-num {
+  font-weight: 700;
+  background: rgba(99, 102, 241, 0.32);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.sudoku-cell.error {
+  background: rgba(239, 68, 68, 0.25);
+  color: var(--danger);
+  animation: shake 0.35s ease;
+}
+
+.sudoku-cell.won {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.num-btn {
+  aspect-ratio: 1;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.num-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--cell-hover);
+}
+
+.num-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.status.lose {
+  color: var(--danger);
+}
+
+.status.win {
+  color: var(--success);
+}

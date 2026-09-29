@@ -1,0 +1,126 @@
+.home {
+  width: 100%;
+  max-width: 960px;
+}
+
+.home-lead {
+  text-align: center;
+  color: var(--text-muted);
+  margin: -0.75rem 0 1.75rem;
+}
+
+.game-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.game-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.game-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.game-card h2 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.35rem;
+}
+
+.game-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.game-card-preview {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  background: var(--cell-hover);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.ttt-preview {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 12px;
+}
+
+.ttt-preview span {
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.ttt-preview span:nth-child(1)::after,
+.ttt-preview span:nth-child(5)::after,
+.ttt-preview span:nth-child(9)::after {
+  content: "×";
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.ttt-preview span:nth-child(3)::after,
+.ttt-preview span:nth-child(7)::after {
+  content: "○";
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.sudoku-preview {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px),
+    linear-gradient(var(--text-muted) 2px, transparent 2px),
+    linear-gradient(90deg, var(--text-muted) 2px, transparent 2px);
+  background-size:
+    calc(100% / 9) calc(100% / 9),
+    calc(100% / 9) calc(100% / 9),
+    calc(100% / 3) calc(100% / 3),
+    calc(100% / 3) calc(100% / 3);
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+.c4-preview {
+  background:
+    radial-gradient(circle at 25% 78%, #ef4444 11%, transparent 12%),
+    radial-gradient(circle at 50% 58%, #eab308 11%, transparent 12%),
+    radial-gradient(circle at 75% 38%, #ef4444 11%, transparent 12%),
+    linear-gradient(#2563eb 0 0) center / 100% 100% no-repeat;
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+  .game-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .game-cards {
+    grid-template-columns: 1fr;
+  }
+}

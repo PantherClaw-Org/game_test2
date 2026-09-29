@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="../shared.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../theme.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Tic Tac Toe</h1>
+      <div class="header-actions">
+        <a class="back-link" href="../index.html">← Games</a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="theme-icon sun" aria-hidden="true">☀️</span>
+          <span class="theme-icon moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="game-panel">
+      <div class="settings">
+        <div class="setting-group">
+          <label class="setting-label" for="gameMode">Mode</label>
+          <select class="select" id="gameMode">
+            <option value="pvp">2 Players</option>
+            <option value="cpu">vs Computer</option>
+          </select>
+        </div>
+        <div class="setting-group" id="difficultyGroup" hidden>
+          <label class="setting-label" for="difficulty">Difficulty</label>
+          <select class="select" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+            <option value="insane">Insane</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <p class="status" id="status">Player X's turn</p>
+        <div class="scores">
+          <span class="score"><strong id="labelX">X</strong> <span id="scoreX">0</span></span>
+          <span class="score-divider">·</span>
+          <span class="score"><strong id="labelO">O</strong> <span id="scoreO">0</span></span>
+          <span class="score-divider">·</span>
+          <span class="score">Draws <span id="scoreDraw">0</span></span>
+        </div>
+      </div>
+
+      <div class="board" id="board" role="grid" aria-label="Tic tac toe board">
+        <button type="button" class="cell" data-index="0" role="gridcell" aria-label="Cell 1"></button>
+        <button type="button" class="cell" data-index="1" role="gridcell" aria-label="Cell 2"></button>
+        <button type="button" class="cell" data-index="2" role="gridcell" aria-label="Cell 3"></button>
+        <button type="button" class="cell" data-index="3" role="gridcell" aria-label="Cell 4"></button>
+        <button type="button" class="cell" data-index="4" role="gridcell" aria-label="Cell 5"></button>
+        <button type="button" class="cell" data-index="5" role="gridcell" aria-label="Cell 6"></button>
+        <button type="button" class="cell" data-index="6" role="gridcell" aria-label="Cell 7"></button>
+        <button type="button" class="cell" data-index="7" role="gridcell" aria-label="Cell 8"></button>
+        <button type="button" class="cell" data-index="8" role="gridcell" aria-label="Cell 9"></button>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-secondary" id="resetRound">New Round</button>
+        <button type="button" class="btn btn-primary" id="resetAll">Reset Scores</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
